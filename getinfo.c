@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * clear_info - initializes info_t struct
+ * clear_info - intializes info_t struct
  * @info: struct address
  */
 void clear_info(info_t *info)
@@ -65,10 +65,11 @@ void free_info(info_t *info, int all)
 		if (info->alias)
 			free_list(&(info->alias));
 		ffree(info->environ);
-			info->environ = NULL;
+		info->environ = NULL;
 		bfree((void **)info->cmd_buf);
 		if (info->readfd > 2)
 			close(info->readfd);
 		_putchar(BUF_FLUSH);
 	}
 }
+
